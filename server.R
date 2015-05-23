@@ -13,22 +13,13 @@ shinyServer(function(input, output) {
   strCriteria2 <-""
   output$sopPlot <- renderPlot({
     
-    # generate bins based on input$bins from ui.R
-    #x    <- faithful[, 2] 
-    #bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    #hist(x, breaks = bins, col = 'darkgray', border = 'white')
 
-    
+    # Read the data    
     data <- read.csv("FactTable.csv")
     
     # Select here the categories of interest.
-    
-    strCriteria <- "C=='Total Revenues' | C=='Total Expenses'"
     strCriteria <- paste ("C == '",input$category1,"' | ", sep ="", collapse = '')
     strCriteria <- strtrim(strCriteria, nchar(strCriteria)-2)
-    #strCriteria <- "C=='Total Revenues' | C=='Total Expenses'"
     catCriteria <- parse(text = c(strCriteria))
     subData <- subset(data, eval(catCriteria))
     
