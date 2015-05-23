@@ -13,10 +13,10 @@ years <- as.integer(data$Y)
 shinyUI(pageWithSidebar(
   
 
-    # Application title
+  # Application title
   headerPanel("Statement of Operations for VWX Consulting"),
   
-  # Sidebar with a slider input for number of bins
+  # Sidebar with a selectize box for choosing categories and two sliders for the year from and to.
   sidebarPanel(
       h3("Overview:"),
       helpText("VWX Consulting is a not-for-profit that provides consulting services. Its Annual Statement of Operations displays VWX's performance in major Revenue and Expense categories. 
@@ -50,7 +50,7 @@ shinyUI(pageWithSidebar(
       
     ),
     
-  # Show a plot of the generated distribution
+  # Show the plot
   mainPanel(
     plotOutput("sopPlot"),
     textOutput("debug")
