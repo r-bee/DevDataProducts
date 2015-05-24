@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exploring Statements of Operations</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Exploring Statements of Operations">
+  <meta name="author" content="r_bee">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Exploring Statements of Operations</h1>
+    <h2>A Shiny App</h2>
+    <p>r_bee<br/>R Learner</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Financial Statements and Statements of Operations</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Financial Statements are reports that organizations are oblidged by the law to periodically publish.</li>
+<li>There are several kinds of Financial Statements:
+
+<ul>
+<li><strong>Balance Sheet</strong>: Displays the current situation of the organization, in terms of assets, liabilities and equity.</li>
+<li><em>Income Statement</em> or <strong>Statements of Operations</strong>: Display the revenues and expenses of the organization for a period of time.</li>
+<li><em>Statement of Cash Flows</em>: shows input and output for a period of time in terms of cash. </li>
+</ul></li>
+<li>Here we will focus on the <strong>Statement of Operations</strong> for a hypothetical not-for-profit consutling company called VWX</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Statement of Operations.</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Contains several Reveneue and Expense categories. </li>
+<li>Those interested in financially evaluating VWX want to see how Revenues and Expenses evolve over time.
+
+<ul>
+<li>For example if Revenues decrease over time, it means that the VWX might be heading to a financial trouble.</li>
+<li>On the other hand, they may want to use the data to calculate various ratios, such as income-to-debt. For example if an organiztion has an yearly income $15,000,000 and a debt $50,000,000 the revenue-to-debt ratio would be:</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">library(scales)
+percent(15000000/50000000)
+</code></pre>
+
+<pre><code>## [1] &quot;30%&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Statement of Operations App</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The VWX Statements of Operations App allows users display in a line-plot historical data for any set of expense or revenue category.</li>
+<li>The user first selects the revenue and expense category she is interested in:
+
+<ul>
+<li>Revenues for VWX include: Service Contracts, Sales and (Other) Services, User Fees (for a web app they offer) or Investment Income. </li>
+<li>Expeneses for VWX include: Salaries and Benefits (for paying staff), Operating Costs (IT, printing, travel) or taxes and utilities.</li>
+</ul></li>
+<li><p>She then selects the time window for which she wants data to be displayed:</p>
+
+<ul>
+<li>For VWX the available data are from 2004 to 2014</li>
+</ul></li>
+<li><p>In the following slide the Total Revenues are compared with the Total expenses for the period 2007 to 2013.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Financial Statements and Statements of Operations'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Statement of Operations.'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Statement of Operations App'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='NA'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
